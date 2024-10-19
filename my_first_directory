@@ -1,2 +1,2 @@
-6-firstdirectory
-6-firstdirectory
+mkdir /holbertonschool-shell/tmp
+touch /holbertonschool-shell/tmp/my_first_directory
