@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Show files in list format, but only part after first dash
+for file in *
+do
+  # Fayl adının başında tire yoxdursa və içində tire varsa işləyirik
+  if [[ "$file" == *-* ]]; then
+    echo "${file#*-}"
+  fi
+done
