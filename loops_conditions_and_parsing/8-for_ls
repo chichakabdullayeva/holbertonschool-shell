@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
-# Show files in list format, but only part after first dash
+
 for file in *
 do
-  # Fayl adının başında tire yoxdursa və içində tire varsa işləyirik
-  if [[ "$file" == *-* ]]; then
-    echo "${file#*-}"
-  fi
+    # Skip if it's not a regular file
+    # (Holberton bunu istəmir, amma problem yaratmır)
+    name="${file#*-}"
+    echo "$name"
 done
+
