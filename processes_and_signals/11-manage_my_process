@@ -5,14 +5,14 @@ PID_FILE="/var/run/my_process.pid"
 PROCESS="./manage_my_process"
 
 start() {
-    $PROCESS &       # Run the process in the background
-    echo $! > "$PID_FILE"   # Save its PID
+    $PROCESS &                        # Run the process in the background
+    echo $! > "$PID_FILE"             # Save its PID
     echo "manage_my_process started"
 }
 
 stop() {
     if [ -f "$PID_FILE" ]; then
-        kill $(cat "$PID_FILE") 2>/dev/null
+        kill "$(cat "$PID_FILE")" 2>/dev/null   # Quote to prevent word splitting
         rm -f "$PID_FILE"
         echo "manage_my_process stopped"
     else
@@ -40,3 +40,4 @@ case "$1" in
         echo "Usage: manage_my_process {start|stop|restart}"
         ;;
 esac
+
