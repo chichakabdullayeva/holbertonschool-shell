@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
-
-for file in *
-do
-    # Skip if it's not a regular file
-    # (Holberton bunu istəmir, amma problem yaratmır)
-    name="${file#*-}"
-    echo "$name"
+# Display filenames after first dash using for loop
+for file in *; do
+    # Skip directories (Holberton bunu istəsə-istesə də ziyanı yoxdur)
+    if [ -f "$file" ]; then
+        echo "${file#*-}"
+    fi
 done
-
