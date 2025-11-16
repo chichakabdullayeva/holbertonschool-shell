@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-# This script displays a list of currently running processes for all users, including hierarchy
-ps axjf
+# This script displays all currently running processes in a user-oriented format with hierarchy
+ps auxf
