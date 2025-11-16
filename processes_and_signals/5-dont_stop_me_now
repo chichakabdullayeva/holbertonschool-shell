@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script stops the "4-to_infinity_and_beyond" process
-# Get the PID(s) of the process and kill them
-kill $(pgrep -f 4-to_infinity_and_beyond) 2>/dev/null
+# Quote the command substitution to avoid word splitting (ShellCheck SC2046)
+kill "$(pgrep -f 4-to_infinity_and_beyond)" 2>/dev/null
