@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 # This script kills the 7-highlander process
-pgrep -f "7-highlander" | xargs -r kill 2>/dev/null
+while pgrep -f "7-highlander" >/dev/null; do
+    pgrep -f "7-highlander" | xargs -r kill 2>/dev/null
+    sleep 1
+done
